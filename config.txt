@@ -1,0 +1,22 @@
+!
+hostname Router-Alpha
+!
+enable secret 5 $1$mERr$b8g8eEw.F22a.9tQ2tYc5.
+!
+ip domain-name mycompany.com
+!
+interface GigabitEthernet0/1
+ ip address 192.168.1.1 255.255.255.0
+ shutdown
+!
+banner motd ^C
+Authorized Access Only! Violators will be prosecuted.
+^C
+!
+line con 0
+ password cisco
+ logging synchronous
+!
+line vty 0 4
+ login
+!
